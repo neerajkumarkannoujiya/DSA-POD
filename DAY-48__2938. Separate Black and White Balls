@@ -53,29 +53,36 @@ s[i] is either '0' or '1'.
 
 
 
-
-
 class Solution {
     public long minimumSteps(String s) {
-        // long count = 0;
-        // long oneTill = 0;
-        // for (int i = 0; i < s.length(); i++) {
-        //     char ch = s.charAt(i);
-        //     if (ch == '1') {
-        //         oneTill++;
-        //     } else {
-        //         count = count + oneTill;
-        //     }
-        // }
-        // return count;
-        int zeroPos=0;
-        long count=0;
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='0'){
-                count = count + (i-zeroPos);
+        int zeroPos = 0;
+        long count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '0') {
+                count = count + (i - zeroPos);
                 zeroPos++;
             }
         }
         return count;
     }
 }
+
+
+
+
+// class Solution {
+//     public long minimumSteps(String s) {
+//         long count = 0;
+//         long oneTill = 0;
+//         for (int i = 0; i < s.length(); i++) {
+//             char ch = s.charAt(i);
+//             if (ch == '1') {
+//                 oneTill++;
+//             } else {
+//                 count = count + oneTill;
+//             }
+//         }
+//         return count;
+//     }
+// }
+
